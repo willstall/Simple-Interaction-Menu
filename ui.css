@@ -1,0 +1,195 @@
+@font-face {
+    font-family: 'Inter';
+    font-style:  normal;
+    font-weight: 500;
+    font-display: swap;
+    src: url("./font/Inter-Medium.woff2?v=3.19") format("woff2"),
+        url("./font/Inter-Medium.woff?v=3.19") format("woff");
+    }
+@font-face {
+        font-family: 'Inter';
+        font-style:  normal;
+        font-weight: 600;
+        font-display: swap;
+        src: url("./font/Inter-SemiBold.woff2?v=3.19") format("woff2"),
+            url("./font/Inter-SemiBold.woff?v=3.19") format("woff");
+    }    
+
+.noselect {
+-webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                supported by Chrome, Edge, Opera and Firefox */
+}
+.ui
+{
+    text-transform: uppercase;
+    color:#4D4D4D;
+    font-family: 'Inter';
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    font-size: 12px;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+}
+.ui h1
+{
+    font-weight:600;
+    color: #2D2D2D;
+    font-size: 12px;
+}
+.ui h1,.ui p
+{
+    padding: 0;
+    margin:0;
+    display: inline;
+}
+.messages
+{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+
+    display: flex;
+    justify-content: flex-end;
+    align-items:center;
+    align-content: center;    
+    flex-flow: column wrap; 
+
+    padding: 40px;
+    gap: 40px;      
+    pointer-events: none;
+}
+.message
+{
+    padding: 12px 30px 12px 30px;
+    background-color: white;
+    border-radius: 10px;
+    filter: drop-shadow(0 2px 2px rgba(0,0,0,0.1));
+    min-width: 340px;
+
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    align-content: center;
+}
+.message p
+{
+    padding-left: 10px;
+}
+
+@media (orientation: landscape) {
+    .interactions
+    {
+        flex-flow: row wrap; 
+    }
+}
+@media (orientation: portrait) {
+    .interactions
+    {
+        flex-flow: column wrap; 
+    }
+}
+.interactions
+{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    height: 100%;
+    gap: 40px;           
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition-timing-function: ease-out;  
+    -webkit-transition: all  .5s ease-out;
+    -moz-transition: all .5s ease-out;
+    -ms-transition: all .5s ease-out;
+    -o-transition: all .5s ease-out;
+    transition: all .5s ease-out;
+} 
+.menu_on
+{
+    opacity: 1.0;
+    visibility:visible;
+
+}
+.interaction
+{
+    display:inline-flex;
+    flex-flow: column nowrap;   
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: white;    
+    border-radius: 10px;
+    padding: 10px 80px 10px 80px;
+    height:110px;
+    filter: drop-shadow(0 2px 2px rgba(0,0,0,0.1));
+    min-width: 340px;
+    cursor: default; 
+}
+
+.menu_on .interaction:hover
+{
+    cursor: pointer;  
+    filter: drop-shadow(0 5px 5px rgba(0,0,0,0.33));
+}
+.menu_on .interaction:hover .key
+{
+    background-color: #2D2D2D;
+    border:1px solid #2D2D2D;
+    color: white;
+
+    -webkit-transition: all  0.1s ease-out;
+    -moz-transition: all 0.1s ease-out;
+    -ms-transition: all 0.1s ease-out;
+    -o-transition: all 0.1s ease-out;
+    transition: all 0.1 ease-out;
+}
+.menu_on .interaction:hover .key h1
+{
+    color: white;
+}
+
+.key
+{
+    display:inline-flex;
+    padding: 10px 14px 10px 14px;
+    margin:4px;
+    border:1px solid #C3C3C3;
+    border-radius: 5px;            
+    align-items: center;
+    justify-content: center;   
+    background-color: white; 
+    
+    -webkit-transition: all  .5s ease-out;
+    -moz-transition: all .5s ease-out;
+    -ms-transition: all .5s ease-out;
+    -o-transition: all .5s ease-out;
+    transition: all .5 ease-out;              
+}
+.fadeaway
+{
+    animation: waitThenFade 3.33s;          
+}
+@keyframes waitThenFade {
+    0% {
+        opacity: 1;
+    }
+    50%{
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
