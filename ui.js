@@ -1,3 +1,17 @@
+/*
+
+    > This UI was created by generative shader artist @willstall
+        https://www.instagram.com/willstall/
+        https://twitter.com/willstall
+        https://github.com/willstall
+
+    > This UI is free to use as long as the above copyright is present.
+
+    > The font here is called Inter. You're free to use and sell it with your project as long as you're not modifying or directly selling the font.
+    > Learn more about the font here: https://github.com/rsms/inter
+
+*/
+
 class Message
 {
     constructor(title,message)
@@ -93,6 +107,8 @@ class UI
         this.autoclose = (autoclose != null && autoclose != undefined) ? autoclose : true;
         
         document.body.prepend(this.container);
+
+        console.log('UI created by @willstall - https://twitter.com/willstall');
     }
 
     OnPressInteraction( e )
