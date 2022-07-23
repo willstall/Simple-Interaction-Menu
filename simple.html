@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>UI Example</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link type="text/css" rel="stylesheet" href="style.css" />
+    <link type="text/css" rel="stylesheet" href="ui.css" />
+    <style>
+        #img {
+            background: url(./imgs/demo.png) no-repeat center center fixed; 
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;  
+            width: 100%;
+            height: 100%;      
+        }
+    </style>
+  </head>
+  <body>
+    <div id="img"></div>
+  </body>
+  <script type="text/javascript" src="ui.js"></script>
+  <script>
+
+    // create menu
+    let startWithMenuOpen = true;
+    let closeMenuOnInteraction = true;
+
+    let ui = new UI(closeMenuOnInteraction);      
+        ui.ToggleMenu(startWithMenuOpen);
+
+    // demo interaction
+    let toggles = {};
+    let toggled = function(key,message_on,message_off)
+    {
+        toggles[key] = !toggles[key];
+        let m = toggles[key] ? message_on : message_off;
+        ui.Message(m[0],m[1]);
+    }
+
+    // add interactions to menu
+    ui.Interaction("Change Resolution",['1','to','9'],() => ui.Message('Resolution','Changed') );
+    ui.Interaction("Pause",['space'],() => toggled('pause',["Paused"],['Unpaused']));
+    ui.Interaction("Glow",['g','or','d'],() => toggled('glow',["Glow","On"],["glow",'Off']));
+
+    // demo messages
+    document.addEventListener('keydown', () => {ui.Message('key','pressed');} );
+
+  </script>
+</html>
