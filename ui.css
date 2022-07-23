@@ -94,7 +94,7 @@
 @media (orientation: portrait) {
     .interactions
     {
-        flex-flow: column wrap; 
+        flex-flow: column nowrap;
     }
 }
 .interactions
