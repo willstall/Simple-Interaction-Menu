@@ -3,101 +3,47 @@ Add Touch, Click, and Keyboard interactions supported by a simple menu and messa
 
 *Streamlined for generative art like fxHash.*
 
-# Demo
+# Interactive Demo
 https://willstall.github.io/Simple-Interaction-Menu/
 
+# Menu Code Example
+```
+<script type="text/javascript" src="ui.js"></script>
+<script type="text/javascript">
+
+// create menu
+let startWithMenuOpen = true;
+let closeMenuOnInteraction = true;
+
+let ui = new UI(closeMenuOnInteraction);      
+    ui.ToggleMenu(startWithMenuOpen);
+
+// demo interaction
+let toggles = {};
+let toggled = function(key,message_on,message_off)
+{
+    toggles[key] = !toggles[key];
+    let m = toggles[key] ? message_on : message_off;
+    ui.Message(m[0],m[1]);
+}
+
+// add interactions to menu
+ui.Interaction("Change Resolution",['1','to','9'],() => ui.Message('Resolution','Changed') );
+ui.Interaction("Pause",['space'],() => toggled('pause',["Paused"],['Unpaused']));
+ui.Interaction("Glow",['g','or','d'],() => toggled('glow',["Glow","On"],["glow",'Off']));
+
+// demo messages
+document.addEventListener('keydown', () => {ui.Message('key','pressed');} );
+
+</script>
+```
+
 # Quick Setup
-1) Add `<link type="text/css" rel="stylesheet" href="ui.css" />` to your `<head>` tag area
-2) Add `<script>let ui = new UI(true);</script>` after your `<body>` tag
-3) Add a menu item `ui.Interaction("Change Resolution",['key'],() => {});`
-
-# Full Menu Example
-
-
-    // custom ui stuff
-    let ui = new UI(true);      // define if you want menus to close on click or not
-        ui.ToggleMenu(true);    // turn on menu by default
-
-    // custom interactions
-    let change_resolution = ( x ) => {
-      if(x == 0)
-        ui.Message('Anti-Aliasing','disabled');
-      else
-        ui.Message('Anti-Aliasing',x+'x');
-    };
-
-    ui.Interaction("Change Resolution",['key'],() => {});
-
-    ui.Interaction("Change Resolution",['1','to','9'],
-        () => {
-            ui.Message('use','number keys [ 1-9 ]');
-        }
-    );
-
-    let glow_enabled = false;
-    let toggle_glow = ()=>
-    {
-        glow_enabled = !glow_enabled;
-            let m = glow_enabled == true ? "on" : "off";
-            ui.Message('Glow',m);
-    };
-    ui.Interaction("Toggle Glow",['g','and','d'],toggle_glow);
-
-    let clicked = false;    
-    ui.Interaction("Just click me",null,
-        () => {
-            clicked = !clicked;
-            let m = clicked  ? "Clicked" : "Absolutely Clicked";
-            ui.Message(m);
-    });
-
-    let paused = false;
-    let toggle_pause = () =>
-    {
-        paused = !paused;
-        let t = paused ? "Pause" : "Resume";
-        ui.Message(t);   
-    }
-    ui.Interaction("Pause/Resume",['space'],toggle_pause);   
-
-    // custom keyboard stuff
-    let on_keyboard_event = e =>
-    {
-        switch(e.key)
-        {
-            case "p":
-            case " ":
-            case "Spacebar":
-            toggle_pause() 
-                break;
-            case "g":
-            case "G":
-            case "d":
-            case "D":
-                toggle_glow();
-                break;
-            case "0":
-            case "1":
-            case "2":
-            case "3":
-            case "4":
-            case "5":
-            case "6":
-            case "7":
-            case "8":
-            case "9":
-                change_resolution(e.key);
-                break;
-            case "esc":
-                ui.ToggleMenu(false);
-                break;
-            default:
-                break;
-        }
-
-        ui.ToggleMenu(false);  // Just shutting the UI if we press a button, just a preference
-    }; 
-    document.addEventListener('keydown', on_keyboard_event);
+1) Add `<link type="text/css" rel="stylesheet" href="ui.css" />` to your `<head>` tag
+2) Add `<script type="text/javascript" src="ui.js"></script>` after your `<body>` tag
+3) Add `<script>let ui = new UI(true);</script>` after your `<body>` tag
+4) Add a menu item `ui.Interaction("Change Resolution",['key'],() => {});`
+5) Create a message with `ui.Message("title","body");`
 
 ## The typeface is called *Inter*.
 
