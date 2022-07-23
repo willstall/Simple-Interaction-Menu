@@ -46,6 +46,11 @@ https://github.com/willstall/Simple-Interaction-Menu/blob/main/simple.html
 4) Add a menu item `ui.Interaction("Change Resolution",['key'],() => {});`
 5) Create a message with `ui.Message("title","body");`
 
+# Intention
+- This ui system is meant to be low-weight, flexible, and easy to integrate.
+- Currently one cannot add/remove items from the menu, this is to keep the system lightweight ( *for now* ).
+- Please suggest changed and/or give feedback
+
 ## The typeface is called *Inter*.
 
 You're free to use and sell it with your project as long as you're not modifying or directly selling the font.
