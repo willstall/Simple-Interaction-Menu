@@ -50,8 +50,8 @@ You're free to use and sell it with your project as long as you're not modifying
 Learn more about the font here: https://github.com/rsms/inter
 
 ## This UI was created by generative shader artist @willstall
-* https://www.instagram.com/willstall/
-* https://twitter.com/willstall
-* https://github.com/willstall
+* [Instagram](https://www.instagram.com/willstall/)
+* [Twitter](https://twitter.com/willstall)
+* [Github](https://github.com/willstall)
             
 Free to use and modify as long as the above copyright line is present.
