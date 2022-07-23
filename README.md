@@ -1,4 +1,4 @@
-# Simple-Interaction-Menu
+# Simple Interaction Menu
 Add Touch, Click, and Keyboard interactions supported by a simple menu and messaging system.
 
 *Streamlined for generative art sites like fxHash.*
