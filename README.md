@@ -4,7 +4,7 @@ Add Touch, Click, and Keyboard interactions supported by a simple menu and messa
 *Streamlined for generative art sites like fxHash.*
 
 # Demos
-* [Full Interactive Demo](https://willstall.github.io/Simple-Interaction-Menu/) - Has Keyboard Integration
+* [Full Interactive Demo](https://willstall.github.io/Simple-Interaction-Menu/) - Full Menu System w/ Keyboard Integration
 * [Basic Demo](https://willstall.github.io/Simple-Interaction-Menu/simple.html) - Simplified Keyboard Interaction, Simplified Code
 
 # Basic Code Example
