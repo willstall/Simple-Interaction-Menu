@@ -5,7 +5,7 @@ Add Touch, Click, and Keyboard interactions supported by a simple menu and messa
 
 # Demos
 * [Full Interactive Demo](https://willstall.github.io/Simple-Interaction-Menu/) - Has Keyboard Integration
-* [Basic Demo](https://willstall.github.io/Simple-Interaction-Menu/simple.html) - No Keyboard Interaction, Simplified Code
+* [Basic Demo](https://willstall.github.io/Simple-Interaction-Menu/simple.html) - Simplified Keyboard Interaction, Simplified Code
 
 # Basic Code Example
 ```
