@@ -22,12 +22,16 @@
     <div id="img"></div>
   </body>
   <script type="text/javascript" src="ui.js"></script>
-  <script>   
+  <script>
+    
     // custom ui stuff
     let ui = new UI(true);      // define if you want menus to close on click or not
         ui.ToggleMenu(true);    // turn on menu by default
 
     // custom interactions
+    let follow = () => window.location.href = 'https://twitter.com/willstall';
+    ui.Interaction("Follow @Willstall",['f'], follow );
+
     let change_resolution = ( x ) => {
       if(x == 0)
         ui.Message('Anti-Aliasing','disabled');
@@ -48,15 +52,7 @@
             let m = glow_enabled == true ? "on" : "off";
             ui.Message('Glow',m);
     };
-    ui.Interaction("Toggle Glow",['g','and','d'],toggle_glow);
-
-    let clicked = false;    
-    ui.Interaction("Just click me",null,
-        () => {
-            clicked = !clicked;
-            let m = clicked  ? "Clicked" : "Absolutely Clicked";
-            ui.Message(m);
-    });
+    ui.Interaction("Toggle Some Feature",['t','and','d'],toggle_glow);
 
     let paused = false;
     let toggle_pause = () =>
@@ -66,6 +62,10 @@
         ui.Message(t);   
     }
     ui.Interaction("Pause/Resume",['space'],toggle_pause);   
+    ui.Interaction("Button Pause/Resume",null,toggle_pause); 
+
+    ui.Interaction("Grab the code on Github",['Use this iu'], () => {window.location.href = "https://github.com/willstall/Simple-Interaction-Menu";} );
+    
 
     // custom keyboard stuff
     let on_keyboard_event = e =>
@@ -75,10 +75,10 @@
             case "p":
             case " ":
             case "Spacebar":
-            toggle_pause() 
+                toggle_pause();
                 break;
-            case "g":
-            case "G":
+            case "t":
+            case "T":
             case "d":
             case "D":
                 toggle_glow();
@@ -94,6 +94,10 @@
             case "8":
             case "9":
                 change_resolution(e.key);
+                break;
+            case "f":
+            case "F":
+                follow();
                 break;
             case "esc":
                 ui.ToggleMenu(false);
