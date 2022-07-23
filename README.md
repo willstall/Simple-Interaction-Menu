@@ -3,6 +3,8 @@ Add Touch, Click, and Keyboard interactions supported by a simple menu and messa
 
 *Streamlined for generative art like fxHash.*
 
+# Demo
+https://willstall.github.io/Simple-Interaction-Menu/
 
 ## This UI was created by generative shader artist @willstall
 * https://www.instagram.com/willstall/
