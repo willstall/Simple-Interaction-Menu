@@ -99,6 +99,11 @@ https://willstall.github.io/Simple-Interaction-Menu/
     }; 
     document.addEventListener('keydown', on_keyboard_event);
 
+## The typeface is called *Inter*.
+
+You're free to use and sell it with your project as long as you're not modifying or directly selling the font.
+
+Learn more about the font here: https://github.com/rsms/inter
 
 ## This UI was created by generative shader artist @willstall
 * https://www.instagram.com/willstall/
@@ -106,9 +111,3 @@ https://willstall.github.io/Simple-Interaction-Menu/
 * https://github.com/willstall
             
 Free to use and modify as long as the above copyright line is present.
-
-## The typeface is called *Inter*.
-
-You're free to use and sell it with your project as long as you're not modifying or directly selling the font.
-
-Learn more about the font here: https://github.com/rsms/inter
