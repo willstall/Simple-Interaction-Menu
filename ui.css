@@ -178,6 +178,13 @@
     -o-transition: all .5s ease-out;
     transition: all .5 ease-out;              
 }
+@media only screen and (max-height: 844px) {
+    .keys
+    {
+        display: none;
+    }
+}
+
 .fadeaway
 {
     animation: waitThenFade 3.33s;          

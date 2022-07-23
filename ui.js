@@ -58,6 +58,7 @@ class Interaction
         if(key_titles != undefined && key_titles != null)
         {
             this.keys = document.createElement("div");
+            this.keys.classList.add('keys');
             for(let i =0; i<key_titles.length;i++)
             {
                 let k;
