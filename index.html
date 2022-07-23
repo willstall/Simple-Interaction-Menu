@@ -29,9 +29,6 @@
         ui.ToggleMenu(true);    // turn on menu by default
 
     // custom interactions
-    let follow = () => window.location.href = 'https://twitter.com/willstall';
-    ui.Interaction("Follow @Willstall",['f'], follow );
-
     let change_resolution = ( x ) => {
       if(x == 0)
         ui.Message('Anti-Aliasing','disabled');
@@ -66,7 +63,8 @@
 
     ui.Interaction("Grab the code on Github",['Use this iu'], () => {window.location.href = "https://github.com/willstall/Simple-Interaction-Menu";} );
     
-
+    let follow = () => window.location.href = 'https://twitter.com/willstall';
+    ui.Interaction("Follow @Willstall",['f'], follow );
     // custom keyboard stuff
     let on_keyboard_event = e =>
     {
