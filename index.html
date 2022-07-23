@@ -42,6 +42,13 @@
         ui.ToggleMenu(true);    // turn on menu by default
 
     // custom interactions
+    let change_resolution = ( x ) => {
+      if(x == 0)
+        ui.Message('Anti-Aliasing','disabled');
+      else
+        ui.Message('Anti-Aliasing',x+'x');
+    };
+
     ui.Interaction("Change Resolution",['1','to','9'],
         () => {
             ui.Message('use','number keys [ 1-9 ]');
@@ -100,7 +107,7 @@
             case "7":
             case "8":
             case "9":
-                
+                change_resolution(e.key);
                 break;
             case "esc":
                 ui.ToggleMenu(false);
